@@ -3,7 +3,7 @@ export async function register(previousState, formData) {
         const email = formData.get("email");
         const password = formData.get("password");
 
-        const res = await fetch("http://localhost:3000/api/user/register", {
+        const res = await fetch("https://todo-mern-j4xc.onrender.com/api/user/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -28,7 +28,7 @@ export async function login(previousState, formData) {
         const email = formData.get("email");
         const password = formData.get("password");
 
-        const res = await fetch("http://localhost:3000/api/user/login", {
+        const res = await fetch("https://todo-mern-j4xc.onrender.com/api/user/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
