@@ -100,7 +100,7 @@ const Todos = () => {
     const updatedTodos = data.map((t) => (t._id === todo._id ? updatedTodo : t));
     await mutate(
       async () => {
-        const res = await fetcher(`https://todo-mern-j4xc.onrender.com/${todo._id}`, {
+        const res = await fetcher(https://todo-mern-j4xc.onrender.com/api/todos/${todo._id}`, {
           method: 'PUT',
           body: { isCompleted: updatedTodo.isCompleted },
         });
