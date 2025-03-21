@@ -126,7 +126,7 @@ const Todos = () => {
     }
 
     try {
-      const res = await fetch(`https://todo-mern-j4xc.onrender.com/${id}`, {
+      const res = await fetch(`https://todo-mern-j4xc.onrender.com/api/todos/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
