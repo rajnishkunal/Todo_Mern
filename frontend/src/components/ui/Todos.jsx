@@ -17,7 +17,7 @@ const fetcher = (url, options = {}) =>
   }).then((res) => res.json());
 
 const Todos = () => {
-  const { data, error, mutate, isLoading } = useSWR('http://localhost:3000/api/todos', fetcher);
+  const { data, error, mutate, isLoading } = useSWR('https://todo-mern-j4xc.onrender.com/api/todos', fetcher);
   const [editTodoId, setEditTodoId] = useState(null);
   const [editTitle, setEditTitle] = useState('');
   const navigate = useNavigate();
@@ -59,7 +59,7 @@ const Todos = () => {
     };
 
     async function addTodo() {
-      const response = await fetcher('http://localhost:3000/api/todos', {
+      const response = await fetcher('https://todo-mern-j4xc.onrender.com/api/todos', {
         method: 'POST',
         body: { title },
       });
@@ -82,7 +82,7 @@ const Todos = () => {
     const updatedTodos = data.filter((todo) => todo._id !== id);
     await mutate(
       async () => {
-        const res = await fetcher(`http://localhost:3000/api/todos/${id}`, {
+        const res = await fetcher(`https://todo-mern-j4xc.onrender.com/api/todos/${id}`, {
           method: 'DELETE',
         });
         if (res.error) handleError(res.error);
@@ -100,7 +100,7 @@ const Todos = () => {
     const updatedTodos = data.map((t) => (t._id === todo._id ? updatedTodo : t));
     await mutate(
       async () => {
-        const res = await fetcher(`http://localhost:3000/api/todos/${todo._id}`, {
+        const res = await fetcher(`https://todo-mern-j4xc.onrender.com/${todo._id}`, {
           method: 'PUT',
           body: { isCompleted: updatedTodo.isCompleted },
         });
@@ -126,7 +126,7 @@ const Todos = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:3000/api/todos/${id}`, {
+      const res = await fetch(`https://todo-mern-j4xc.onrender.com/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
