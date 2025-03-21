@@ -19,7 +19,8 @@ const corsOptions={
      origin: ["http://localhost:5173", "https://todo-mern-j4xc.onrender.com"],
     credentials:true,
 }
-app.use(cors(corsOptions));   
+app.use(cors(corsOptions));  
+app.options("*", cors(corsOptions)); // Handles preflight requests
 app.use(bodyParser.json())
 app.use(cookieParser())
 app.use("/api/user",AuthRoute);
