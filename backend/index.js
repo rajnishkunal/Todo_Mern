@@ -15,7 +15,8 @@ const _dirname=path.resolve();
 dotenv.config();
 
 const corsOptions={
-    origin:"https://todo-mern-j4xc.onrender.com/",
+    // origin:"https://todo-mern-j4xc.onrender.com/",
+     origin: ["http://localhost:5173", "https://todo-mern-j4xc.onrender.com"],
     credentials:true,
 }
 app.use(cors(corsOptions));   
