@@ -7,7 +7,7 @@ const Profile = () => {
 
   const handleLogout = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/logout', {
+      const res = await fetch('https://todo-mern-j4xc.onrender.com/api/logout', {
         method: 'POST',
         credentials: 'include',
       });
