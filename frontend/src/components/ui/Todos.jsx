@@ -32,7 +32,7 @@ const Todos = () => {
 
   const handleLogout = async () => {
     try {
-      await fetch('http://localhost:3000/api/auth/logout', {
+      await fetch('https://todo-mern-j4xc.onrender.com/api/auth/logout', {
         method: 'POST',
         credentials: 'include',
       });
